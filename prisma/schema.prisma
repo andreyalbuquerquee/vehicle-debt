@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+
+  vehicles Vehicle[]
+}
+
+model Vehicle {
+  id        String   @id @default(cuid())
+  plate     String
+  renavam   String?
+  uf        String?
+  ownerId   String
+  createdAt DateTime @default(now())
+
+  owner User   @relation(fields: [ownerId], references: [id])
+  Debt  Debt[]
+
+  @@unique([plate])
+}
+
+model Debt {
+  id        String     @id @default(cuid())
+  vehicleId String
+  type      DebtType
+  amount    Decimal    @db.Decimal(10, 2)
+  status    DebtStatus
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  vehicle Vehicle @relation(fields: [vehicleId], references: [id])
+
+  @@index([vehicleId])
+}
+
+enum DebtStatus {
+  pending
+  paid
+}
+
+enum DebtType {
+  MULTA
+  IPVA
+  LICENCIAMENTO
+}
