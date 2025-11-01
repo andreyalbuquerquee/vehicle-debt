@@ -3,22 +3,37 @@ import { z } from 'zod';
 
 dotenv.config();
 
-const logLevels = ['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'] as const;
+const logLevels = [
+  'fatal',
+  'error',
+  'warn',
+  'info',
+  'debug',
+  'trace',
+  'silent',
+] as const;
 
 const EnvSchema = z.object({
-  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
-  
+  NODE_ENV: z
+    .enum(['development', 'test', 'production'])
+    .default('development'),
+
   PORT: z.coerce.number().int().min(1).max(65535).default(3000),
 
-  DATABASE_URL: z
-    .string()
-    .min(1, 'DATABASE_URL é obrigatório'),
+  DATABASE_URL: z.string().min(1, 'DATABASE_URL é obrigatório'),
 
   JWT_SECRET: z
     .string()
     .min(16, 'JWT_SECRET deve ter pelo menos 16 caracteres'),
 
   CORS_ORIGIN: z.string().optional(),
+
+  JWT_EXPIRATION_DAYS: z
+    .string()
+    .regex(
+      /^\d+(\.\d+)?\s*d$/i,
+      "Formato de tempo inválido. Use um número seguido por 'd' (ex: '1d', '7d').",
+    ),
 
   LOG_LEVEL: z.enum(logLevels).default('info'),
 });
@@ -32,7 +47,7 @@ function parseCors(origin?: string): string[] | '*' | undefined {
 
   return origin
     .split(',')
-    .map(s => s.trim())
+    .map((s) => s.trim())
     .filter(Boolean);
 }
 
