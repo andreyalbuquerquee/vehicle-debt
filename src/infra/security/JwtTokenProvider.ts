@@ -1,26 +1,27 @@
-import jwt, { type SignOptions } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import type { TokenProvider } from '../../core/application/ports/security/TokenProvider';
 
-export class JwtTokenProvider<Payload extends object = { userId: string }>
-  implements TokenProvider<Payload> {
+export interface JwtTokenProviderOptions {
+  secret: string;
+  expiresIn?: string | number;
+}
 
-  constructor(private readonly secret: string) { }
+export class JwtTokenProvider<Payload extends object = { userId: string }>
+  implements TokenProvider<Payload>
+{
+  constructor(private readonly options: JwtTokenProviderOptions) {}
 
   sign(payload: Payload, opts?: { expiresIn?: string | number }) {
-    const expiresIn = opts?.expiresIn;
+    const expiresIn = opts?.expiresIn ?? this.options.expiresIn;
 
-    if (expiresIn === undefined) {
-      return jwt.sign(payload, this.secret);
-    }
-
-    const signOptions: SignOptions = typeof expiresIn === 'number'
-      ? { expiresIn }
-      : { expiresIn: expiresIn as SignOptions['expiresIn'] };
-
-    return jwt.sign(payload, this.secret, signOptions);
+    return jwt.sign(
+      payload,
+      this.options.secret,
+      expiresIn ? { expiresIn } : undefined,
+    );
   }
 
   verify(token: string): Payload {
-    return jwt.verify(token, this.secret) as Payload;
+    return jwt.verify(token, this.options.secret) as Payload;
   }
 }
