@@ -8,14 +8,16 @@ interface IOutput {
 }
 
 export class JwtAuthGuard implements IAuthGuard<IOutput> {
-  constructor(private readonly tokenProvider: TokenProvider) { }
-  
+  constructor(private readonly tokenProvider: TokenProvider) {}
+
   check(request: IHttpRequest): IOutput {
     const headers = request.headers ?? {};
     const authorization = headers.authorization as string | undefined;
 
     if (!authorization || !authorization.startsWith('Bearer ')) {
-      throw DomainError.unauthorized('Missing or malformed authorization header');
+      throw DomainError.unauthorized(
+        'Missing or malformed authorization header',
+      );
     }
 
     const token = authorization.replace('Bearer ', '').trim();
@@ -25,7 +27,9 @@ export class JwtAuthGuard implements IAuthGuard<IOutput> {
 
       return { userId };
     } catch (error) {
-      throw DomainError.unauthorized('Invalid token').withContext({ cause: error });
+      throw DomainError.unauthorized('Invalid token').withContext({
+        cause: error,
+      });
     }
   }
 }
