@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt, { type SignOptions } from 'jsonwebtoken';
 import type { TokenProvider } from '../../core/application/ports/security/TokenProvider';
 
 export interface JwtTokenProviderOptions {
@@ -17,7 +17,9 @@ export class JwtTokenProvider<Payload extends object = { userId: string }>
     return jwt.sign(
       payload,
       this.options.secret,
-      expiresIn ? { expiresIn } : undefined,
+      expiresIn
+        ? { expiresIn: expiresIn as SignOptions['expiresIn'] }
+        : undefined,
     );
   }
 
