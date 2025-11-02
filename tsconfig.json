@@ -9,5 +9,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "isolatedModules": true
-  }
+  },
+  "include": ["src"],
+  "exclude": ["tests", "coverage", "jest.config.js"]
 }
