@@ -1,9 +1,9 @@
-import type { HashProvider } from '../../../../core/application/ports/crypto/HashProvider';
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import type { UniqueIdGenerator } from '../../../../core/domain/UniqueIdGenerator';
-import type { IUserRepo } from '../../domain/IUserRepo';
-import { User } from '../../domain/User';
-import { UserEmail } from '../../domain/UserEmail';
+import type { HashProvider } from '@core/application/ports/crypto/HashProvider';
+import { DomainError } from '@core/domain/errors/DomainError';
+import type { UniqueIdGenerator } from '@core/domain/UniqueIdGenerator';
+import type { IUserRepo } from '@modules/auth/domain/IUserRepo';
+import { User } from '@modules/auth/domain/User';
+import { UserEmail } from '@modules/auth/domain/UserEmail';
 import type { RegisterUserDTO } from '../dto/RegisterUserDTO';
 
 export class RegisterUserUseCase {

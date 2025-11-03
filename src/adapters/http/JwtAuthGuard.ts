@@ -1,5 +1,5 @@
-import type { TokenProvider } from '../../core/application/ports/security/TokenProvider';
-import { DomainError } from '../../core/domain/errors/DomainError';
+import type { TokenProvider } from '@core/application/ports/security/TokenProvider';
+import { DomainError } from '@core/domain/errors/DomainError';
 import type { IAuthGuard } from './AuthGuard';
 import type { IHttpRequest } from './IHttpRequest';
 

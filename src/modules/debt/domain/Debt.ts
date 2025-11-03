@@ -1,5 +1,5 @@
-import { Entity, type EntityOptions } from '../../../core/domain/Entity';
-import { DomainError } from '../../../core/domain/errors/DomainError';
+import { Entity, type EntityOptions } from '@core/domain/Entity';
+import { DomainError } from '@core/domain/errors/DomainError';
 import type { DebtStatus } from './DebtStatus';
 import { DEBT_TYPES, type DebtType } from './DebtType';
 

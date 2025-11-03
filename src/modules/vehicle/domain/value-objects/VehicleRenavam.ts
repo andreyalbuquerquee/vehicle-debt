@@ -1,5 +1,5 @@
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import { ValueObject } from '../../../../core/domain/ValueObject';
+import { DomainError } from '@core/domain/errors/DomainError';
+import { ValueObject } from '@core/domain/ValueObject';
 
 const RENAVAM_REGEX = /^[0-9]{11}$/;
 

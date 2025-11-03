@@ -1,7 +1,7 @@
+import { DefaultErrorHandler } from '@adapters/http/DefaultErrorHandler';
+import type { IController } from '@adapters/http/IController';
+import type { IHttpErrorHandler } from '@adapters/http/IHttpErrorHandler';
 import type { Request, Response } from 'express';
-import { DefaultErrorHandler } from '../../adapters/http/DefaultErrorHandler';
-import type { IController } from '../../adapters/http/IController';
-import type { IHttpErrorHandler } from '../../adapters/http/IHttpErrorHandler';
 
 export function expressRouteAdapter(
   controller: IController,

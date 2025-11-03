@@ -1,6 +1,6 @@
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import type { IVehicleRepo } from '../../domain/IVehicleRepo';
-import { VehiclePlate } from '../../domain/value-objects/VehiclePlate';
+import { DomainError } from '@core/domain/errors/DomainError';
+import type { IVehicleRepo } from '@modules/vehicle/domain/IVehicleRepo';
+import { VehiclePlate } from '@modules/vehicle/domain/value-objects/VehiclePlate';
 import type { GetVehicleByPlateDTO } from '../dto/GetVehicleByPlateDTO';
 
 export class GetVehicleByPlateUseCase {

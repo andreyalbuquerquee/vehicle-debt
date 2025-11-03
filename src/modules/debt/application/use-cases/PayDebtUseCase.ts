@@ -1,5 +1,5 @@
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import type { IDebtRepo } from '../../domain/IDebtRepo';
+import { DomainError } from '@core/domain/errors/DomainError';
+import type { IDebtRepo } from '@modules/debt/domain/IDebtRepo';
 import type { PayDebtDTO } from '../dto/PayDebtDTO';
 
 export class PayDebtUseCase {

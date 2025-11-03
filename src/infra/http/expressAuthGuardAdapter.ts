@@ -1,5 +1,5 @@
+import type { IAuthGuard } from '@adapters/http/AuthGuard';
 import type { NextFunction, Request, Response } from 'express';
-import type { IAuthGuard } from '../../adapters/http/AuthGuard';
 
 interface IOutput {
   userId: string;

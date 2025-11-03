@@ -1,6 +1,6 @@
+import { expressAuthGuardAdapter } from '@infra/http/expressAuthGuardAdapter';
+import { expressRouteAdapter } from '@infra/http/expressRouteAdapter';
 import { Router } from 'express';
-import { expressAuthGuardAdapter } from '../../../infra/http/expressAuthGuardAdapter';
-import { expressRouteAdapter } from '../../../infra/http/expressRouteAdapter';
 import {
   makeDebtAuthGuard,
   makeListVehicleDebtsController,

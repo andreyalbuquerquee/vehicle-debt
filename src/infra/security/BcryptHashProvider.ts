@@ -1,5 +1,5 @@
+import type { HashProvider } from '@core/application/ports/crypto/HashProvider';
 import bcrypt from 'bcryptjs';
-import type { HashProvider } from '../../core/application/ports/crypto/HashProvider';
 
 export class BcryptHashProvider implements HashProvider {
   constructor(private readonly rounds = 10) {}

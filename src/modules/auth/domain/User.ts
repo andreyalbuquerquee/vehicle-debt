@@ -1,4 +1,4 @@
-import { Entity, type EntityOptions } from '../../../core/domain/Entity';
+import { Entity, type EntityOptions } from '@core/domain/Entity';
 import { UserEmail } from './UserEmail';
 
 export interface UserProps {

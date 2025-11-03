@@ -1,5 +1,5 @@
+import type { TokenProvider } from '@core/application/ports/security/TokenProvider';
 import jwt, { type SignOptions } from 'jsonwebtoken';
-import type { TokenProvider } from '../../core/application/ports/security/TokenProvider';
 
 export interface JwtTokenProviderOptions {
   secret: string;

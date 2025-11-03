@@ -1,5 +1,5 @@
+import { Vehicle } from '@modules/vehicle/domain/Vehicle';
 import type { Prisma, Vehicle as PrismaVehicle } from '@prisma/client';
-import { Vehicle } from '../../domain/Vehicle';
 
 export function mapPrismaVehicleToDomain(vehicle: PrismaVehicle) {
   return Vehicle.register(

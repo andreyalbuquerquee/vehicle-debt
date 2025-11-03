@@ -1,5 +1,5 @@
+import { env } from '@main/env';
 import { PrismaClient } from '@prisma/client';
-import { env } from '../../../main/env';
 
 export const prisma = new PrismaClient({
   datasources: {

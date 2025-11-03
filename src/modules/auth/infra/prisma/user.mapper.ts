@@ -1,5 +1,5 @@
+import { User } from '@modules/auth/domain/User';
 import type { Prisma, User as PrismaUser } from '@prisma/client';
-import { User } from '../../domain/User';
 
 export function mapPrismaUserToDomain(user: PrismaUser) {
   return User.create(user.email, user.password, {

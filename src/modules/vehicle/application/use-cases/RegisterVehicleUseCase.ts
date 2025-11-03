@@ -1,6 +1,6 @@
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import type { IVehicleRepo } from '../../domain/IVehicleRepo';
-import { Vehicle } from '../../domain/Vehicle';
+import { DomainError } from '@core/domain/errors/DomainError';
+import type { IVehicleRepo } from '@modules/vehicle/domain/IVehicleRepo';
+import { Vehicle } from '@modules/vehicle/domain/Vehicle';
 import type { RegisterVehicleDTO } from '../dto/RegisterVehicleDTO';
 
 export class RegisterVehicleUseCase {

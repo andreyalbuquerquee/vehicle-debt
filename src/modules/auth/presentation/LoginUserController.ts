@@ -1,8 +1,8 @@
+import type { IController } from '@adapters/http/IController';
+import type { IHttpRequest } from '@adapters/http/IHttpRequest';
+import type { IHttpResponse } from '@adapters/http/IHttpResponse';
+import { DomainError } from '@core/domain/errors/DomainError';
 import { z } from 'zod';
-import type { IController } from '../../../adapters/http/IController';
-import type { IHttpRequest } from '../../../adapters/http/IHttpRequest';
-import type { IHttpResponse } from '../../../adapters/http/IHttpResponse';
-import { DomainError } from '../../../core/domain/errors/DomainError';
 import type { LoginUserUseCase } from '../application/use-cases/LoginUserUseCase';
 
 const loginUserSchema = z.object({
