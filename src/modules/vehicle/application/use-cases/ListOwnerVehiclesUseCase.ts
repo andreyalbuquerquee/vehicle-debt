@@ -1,4 +1,4 @@
-import type { IVehicleRepo } from '../../domain/IVehicleRepo';
+import type { IVehicleRepo } from '@modules/vehicle/domain/IVehicleRepo';
 import type { ListVehiclesDTO } from '../dto/ListVehiclesDTO';
 
 export class ListOwnerVehiclesUseCase {

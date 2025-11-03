@@ -1,11 +1,11 @@
-import { DomainError } from '../../../../core/domain/errors/DomainError';
+import { DomainError } from '@core/domain/errors/DomainError';
 import type {
   VehicleOwnershipChecker,
   VehicleOwnershipCheckerInput,
   VehicleOwnershipCheckerOutput,
-} from '../../../debt/application/ports/VehicleOwnershipChecker';
-import type { IVehicleRepo } from '../../domain/IVehicleRepo';
-import { VehiclePlate } from '../../domain/value-objects/VehiclePlate';
+} from '@modules/debt/application/ports/VehicleOwnershipChecker';
+import type { IVehicleRepo } from '@modules/vehicle/domain/IVehicleRepo';
+import { VehiclePlate } from '@modules/vehicle/domain/value-objects/VehiclePlate';
 
 export class VehicleOwnershipCheckerService implements VehicleOwnershipChecker {
   constructor(private readonly vehicleRepo: IVehicleRepo) {}

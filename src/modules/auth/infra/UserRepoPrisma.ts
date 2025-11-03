@@ -1,7 +1,7 @@
+import type { IUserRepo } from '@modules/auth/domain/IUserRepo';
+import type { User } from '@modules/auth/domain/User';
+import type { UserEmail } from '@modules/auth/domain/UserEmail';
 import type { PrismaClient } from '@prisma/client';
-import type { IUserRepo } from '../domain/IUserRepo';
-import type { User } from '../domain/User';
-import type { UserEmail } from '../domain/UserEmail';
 import { mapPrismaUserToDomain, mapUserToPrisma } from './prisma/user.mapper';
 
 export class UserRepoPrisma implements IUserRepo {

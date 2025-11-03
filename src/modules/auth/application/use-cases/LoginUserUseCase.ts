@@ -1,8 +1,8 @@
-import type { HashProvider } from '../../../../core/application/ports/crypto/HashProvider';
-import type { TokenProvider } from '../../../../core/application/ports/security/TokenProvider';
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import type { IUserRepo } from '../../domain/IUserRepo';
-import { UserEmail } from '../../domain/UserEmail';
+import type { HashProvider } from '@core/application/ports/crypto/HashProvider';
+import type { TokenProvider } from '@core/application/ports/security/TokenProvider';
+import { DomainError } from '@core/domain/errors/DomainError';
+import type { IUserRepo } from '@modules/auth/domain/IUserRepo';
+import { UserEmail } from '@modules/auth/domain/UserEmail';
 import type { LoginUserDTO } from '../dto/LoginUserDTO';
 
 export interface LoginUserResult {

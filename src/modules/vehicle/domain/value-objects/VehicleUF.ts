@@ -1,6 +1,6 @@
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import { ValueObject } from '../../../../core/domain/ValueObject';
-import { BRAZILIAN_UFS } from '../../../../core/shared/data/brazilianUfs';
+import { DomainError } from '@core/domain/errors/DomainError';
+import { ValueObject } from '@core/domain/ValueObject';
+import { BRAZILIAN_UFS } from '@core/shared/data/brazilianUfs';
 
 const VALID_UF = new Set<string>(BRAZILIAN_UFS);
 

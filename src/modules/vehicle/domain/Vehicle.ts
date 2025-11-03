@@ -1,5 +1,5 @@
-import { Entity, type EntityOptions } from '../../../core/domain/Entity';
-import { DomainError } from '../../../core/domain/errors/DomainError';
+import { Entity, type EntityOptions } from '@core/domain/Entity';
+import { DomainError } from '@core/domain/errors/DomainError';
 import { VehiclePlate } from './value-objects/VehiclePlate';
 import { VehicleRenavam } from './value-objects/VehicleRenavam';
 import { VehicleUF } from './value-objects/VehicleUF';

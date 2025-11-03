@@ -1,5 +1,5 @@
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import { ValueObject } from '../../../../core/domain/ValueObject';
+import { DomainError } from '@core/domain/errors/DomainError';
+import { ValueObject } from '@core/domain/ValueObject';
 
 const MERCOSUL_REGEX = /^[A-Z]{3}[0-9][A-Z][0-9]{2}$/;
 const OLD_REGEX = /^[A-Z]{3}[0-9]{4}$/;

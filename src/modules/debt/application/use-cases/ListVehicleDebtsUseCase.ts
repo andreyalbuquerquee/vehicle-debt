@@ -1,4 +1,4 @@
-import type { IDebtRepo } from '../../domain/IDebtRepo';
+import type { IDebtRepo } from '@modules/debt/domain/IDebtRepo';
 import type { ListVehicleDebtsDTO } from '../dto/ListVehicleDebtsDTO';
 import type { VehicleOwnershipChecker } from '../ports/VehicleOwnershipChecker';
 

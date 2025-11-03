@@ -1,5 +1,5 @@
+import type { IHttpErrorHandler } from '@adapters/http/IHttpErrorHandler';
 import type { NextFunction, Request, Response } from 'express';
-import type { IHttpErrorHandler } from '../../adapters/http/IHttpErrorHandler';
 
 export function expressErrorHandlerAdapter(
   httpErrorHandler: IHttpErrorHandler,

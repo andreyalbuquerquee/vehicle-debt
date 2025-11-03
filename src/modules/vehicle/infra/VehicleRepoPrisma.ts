@@ -1,7 +1,7 @@
+import type { IVehicleRepo } from '@modules/vehicle/domain/IVehicleRepo';
+import type { Vehicle } from '@modules/vehicle/domain/Vehicle';
+import type { VehiclePlate } from '@modules/vehicle/domain/value-objects/VehiclePlate';
 import type { PrismaClient } from '@prisma/client';
-import type { IVehicleRepo } from '../domain/IVehicleRepo';
-import type { Vehicle } from '../domain/Vehicle';
-import type { VehiclePlate } from '../domain/value-objects/VehiclePlate';
 import {
   mapPrismaVehicleToDomain,
   mapVehicleToPrisma,

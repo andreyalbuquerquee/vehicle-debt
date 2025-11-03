@@ -1,9 +1,9 @@
+import { DefaultErrorHandler } from '@adapters/http/DefaultErrorHandler';
+import { env } from '@main/env';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
 import pinoHttp from 'pino-http';
-import { DefaultErrorHandler } from '../../adapters/http/DefaultErrorHandler';
-import { env } from '../../main/env';
 import { expressErrorHandlerAdapter } from './expressErrorHandlerAdapter';
 import { routes } from './expressRoutes';
 

@@ -1,5 +1,5 @@
+import { expressRouteAdapter } from '@infra/http/expressRouteAdapter';
 import { Router } from 'express';
-import { expressRouteAdapter } from '../../../infra/http/expressRouteAdapter';
 import {
   makeLoginUserController,
   makeRegisterUserController,

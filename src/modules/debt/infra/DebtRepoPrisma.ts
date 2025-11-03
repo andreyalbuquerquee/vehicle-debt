@@ -1,6 +1,6 @@
+import type { Debt } from '@modules/debt/domain/Debt';
+import type { DebtWithOwner, IDebtRepo } from '@modules/debt/domain/IDebtRepo';
 import type { PrismaClient } from '@prisma/client';
-import type { Debt } from '../domain/Debt';
-import type { DebtWithOwner, IDebtRepo } from '../domain/IDebtRepo';
 import { mapDebtToPrisma, mapPrismaDebtToDomain } from './prisma/debt.mapper';
 
 export class DebtRepoPrisma implements IDebtRepo {

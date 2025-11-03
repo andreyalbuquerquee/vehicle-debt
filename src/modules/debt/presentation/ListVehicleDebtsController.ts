@@ -1,7 +1,7 @@
-import type { IController } from '../../../adapters/http/IController';
-import type { IHttpRequest } from '../../../adapters/http/IHttpRequest';
-import type { IHttpResponse } from '../../../adapters/http/IHttpResponse';
-import { DomainError } from '../../../core/domain/errors/DomainError';
+import type { IController } from '@adapters/http/IController';
+import type { IHttpRequest } from '@adapters/http/IHttpRequest';
+import type { IHttpResponse } from '@adapters/http/IHttpResponse';
+import { DomainError } from '@core/domain/errors/DomainError';
 import type { ListVehicleDebtsUseCase } from '../application/use-cases/ListVehicleDebtsUseCase';
 import { parseVehicleDebtsParams } from './validation/debtValidation';
 

@@ -1,6 +1,6 @@
+import { DomainError } from '@core/domain/errors/DomainError';
+import { parseVehiclePlateParams } from '@modules/vehicle/presentation/validation/registerVehicleValidation';
 import { z } from 'zod';
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import { parseVehiclePlateParams } from '../../../vehicle/presentation/validation/registerVehicleValidation';
 
 const payDebtParamsSchema = z.object({
   debtId: z.string().min(1),

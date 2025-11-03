@@ -1,5 +1,5 @@
+import { Debt } from '@modules/debt/domain/Debt';
 import type { Prisma, Debt as PrismaDebt } from '@prisma/client';
-import { Debt } from '../../domain/Debt';
 
 export function mapPrismaDebtToDomain(debt: PrismaDebt) {
   return Debt.restore(

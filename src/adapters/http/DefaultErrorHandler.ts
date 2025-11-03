@@ -1,4 +1,4 @@
-import { DomainError } from '../../core/domain/errors/DomainError';
+import { DomainError } from '@core/domain/errors/DomainError';
 import type { IHttpErrorHandler } from './IHttpErrorHandler';
 import type { IHttpResponse } from './IHttpResponse';
 

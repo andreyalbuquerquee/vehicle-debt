@@ -1,8 +1,8 @@
+import { DomainError } from '@core/domain/errors/DomainError';
+import { VehiclePlate } from '@modules/vehicle/domain/value-objects/VehiclePlate';
+import { VehicleRenavam } from '@modules/vehicle/domain/value-objects/VehicleRenavam';
+import { VehicleUF } from '@modules/vehicle/domain/value-objects/VehicleUF';
 import { z } from 'zod';
-import { DomainError } from '../../../../core/domain/errors/DomainError';
-import { VehiclePlate } from '../../domain/value-objects/VehiclePlate';
-import { VehicleRenavam } from '../../domain/value-objects/VehicleRenavam';
-import { VehicleUF } from '../../domain/value-objects/VehicleUF';
 
 const registerVehicleSchema = z.object({
   plate: z
