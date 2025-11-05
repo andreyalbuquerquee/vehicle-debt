@@ -1,0 +1,64 @@
+name: "CI/CD Pipeline"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    
+    services:
+      
+      postgres:
+        image: postgres:16-alpine  
+        ports: ["5432:5432"]
+        
+        env:
+          POSTGRES_USER: app
+          POSTGRES_PASSWORD: app
+          POSTGRES_DB: vehicle_debts
+        options: >-
+          --health-cmd="pg_isready -U app -d vehicle_debts"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=5
+    
+    env:
+      DATABASE_URL: postgres://app:app@localhost:5432/vehicle_debts?schema=public
+      JWT_SECRET: testtesttesttesttesttesttesttest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: npm
+      
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Prisma Generate Client
+        run: npx prisma generate
+      
+      - name: Prisma Execute Migrations
+        run: npx prisma migrate deploy
+      
+      - name: Linting Biome Check
+        run: npm run lint
+
+      - name: Typechecking
+        run: npm run typecheck
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Tests  
+        run: npm test --if-present
+
+    

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "tsx src/main/index.ts",
     "lint": "biome lint --apply .",
+    "typecheck": "tsc --noEmit",
     "format": "biome format --write .",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev --name init",
