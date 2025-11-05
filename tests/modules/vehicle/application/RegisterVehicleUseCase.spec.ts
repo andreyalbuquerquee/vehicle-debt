@@ -1,5 +1,4 @@
 import { setEntityIdGenerator } from '../../../../src/core/domain/Entity';
-import { DomainError } from '../../../../src/core/domain/errors/DomainError';
 import { RegisterVehicleUseCase } from '../../../../src/modules/vehicle/application/use-cases/RegisterVehicleUseCase';
 import type { IVehicleRepo } from '../../../../src/modules/vehicle/domain/IVehicleRepo';
 import { Vehicle } from '../../../../src/modules/vehicle/domain/Vehicle';
